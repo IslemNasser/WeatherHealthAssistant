@@ -30,7 +30,6 @@ Si l'utilisateur ne mentionne pas de ville, demande-lui de préciser sa localisa
 Si la question n'est pas liée à la météo ou la santé, réponds poliment que tu es spécialisé dans ce domaine.
 """
 
-# Définition du tool pour la récupération météo santé
 
 
 weather_tool = {
@@ -50,7 +49,6 @@ weather_tool = {
 
 def get_weather_health(city: str) -> str:
     try:
-        # Météo principale
         url = "https://api.openweathermap.org/data/2.5/weather"
         params = {"q": city, "appid": API_KEY_WEATHER, "units": "metric", "lang": "fr"}
         r = requests.get(url, params=params, timeout=10)
@@ -66,13 +64,11 @@ def get_weather_health(city: str) -> str:
         lat      = data["coord"]["lat"]
         lon      = data["coord"]["lon"]
 
-        # Indice UV — appel séparé
         uv_url = "https://api.openweathermap.org/data/2.5/uvi"
         uv_params = {"lat": lat, "lon": lon, "appid": API_KEY_WEATHER}
         uv_data = requests.get(uv_url, params=uv_params, timeout=10).json()
         uv_index = uv_data.get("value", "indisponible")
 
-        # Interprétation UV
         if isinstance(uv_index, float) or isinstance(uv_index, int):
             if uv_index <= 2:
                 uv_level = "Faible — pas de protection nécessaire"
@@ -147,10 +143,6 @@ def call_model(prompt: str) -> str:
 
 
 # Interface Streamlit
-
-
-
-# --- 1. INIT EN PREMIER — avant tout le reste ---
 if "messages" not in st.session_state:
     st.session_state.messages = [
         {
@@ -190,7 +182,7 @@ with st.sidebar:
         del st.session_state[f"chat-{model_name}"]
         st.rerun()
 
-# --- 3. CHAT ENSUITE ---
+# ---  CHAT ---
 st.title("Conseiller Santé & Météo 🌤️")
 
 for msg in st.session_state.messages:
