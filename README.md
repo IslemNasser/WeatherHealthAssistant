@@ -8,9 +8,9 @@ Un assistant santé intelligent qui analyse les conditions météo en temps rée
 
 - Analyse météo complète — température, ressenti, humidité, vent, conditions
 - Indice UV en temps réel avec interprétation du niveau de risque
-- IA Gemini 2.5 Flash — conseils santé personnalisés en langage naturel
+- IA Gemini 2.5 Flash — conseils santé personnalisés 
 - Tool Calling automatique — le LLM décide quand appeler l'API météo
-- Chat conversationnel avec historique et timestamps
+- Chat conversationnel avec historique 
 - Reset de session à tout moment
 
 ---
@@ -39,7 +39,7 @@ cd weather-health-app
 ### 2. Créer un environnement virtuel
 
 ```bash
-python -m venv venv
+uv venv
 source venv/bin/activate     # Linux / Mac
 venv\Scripts\activate        # Windows
 ```
@@ -47,7 +47,7 @@ venv\Scripts\activate        # Windows
 ### 3. Installer les dépendances
 
 ```bash
-pip install -r requirements.txt
+uv pip install -r requirements.txt
 ```
 
 ### 4. Configurer les clés API
