@@ -1,4 +1,4 @@
-# Weather Health Advisor
+# Weather Health Assistant
 
 Un assistant santé intelligent qui analyse les conditions météo en temps réel et génère des conseils personnalisés (allergies, chaleur, activité physique, UV) via Gemini AI.
 
