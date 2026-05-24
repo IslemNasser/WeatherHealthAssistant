@@ -60,8 +60,8 @@ gemini_api_key=ta_clé_google_gemini
 ```
 
 Obtenir les clés :
-- OpenWeatherMap → https://openweathermap.org/api (gratuit)
-- Google Gemini → https://aistudio.google.com (gratuit)
+- OpenWeatherMap → https://openweathermap.org/api 
+- Google Gemini → https://aistudio.google.com 
 
 ### 5. Lancer
 
