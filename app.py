@@ -113,7 +113,7 @@ def get_chat(model_name: str):
         )
         chat = client.chats.create(model=model_name, config=config)
         st.session_state[f"chat-{model_name}"] = chat
-    return st.session_state[f"chat-{model_name}"]  # ← manquait ici
+    return st.session_state[f"chat-{model_name}"] 
 
 
 def call_model(prompt: str) -> str:
@@ -129,7 +129,7 @@ def call_model(prompt: str) -> str:
                 has_tool_calls = True
                 fn = part.function_call
                 if fn.name == "get_weather_health":
-                    result = get_weather_health(**fn.args)  # ta fonction météo
+                    result = get_weather_health(**fn.args) 
                     function_response_part = types.Part.from_function_response(
                         name=fn.name,
                         response={"result": result}
@@ -152,7 +152,6 @@ if "messages" not in st.session_state:
         }
     ]
 
-# --- 2. SIDEBAR ENSUITE ---
 with st.sidebar:
     st.title("💬 Historique")
     st.divider()
