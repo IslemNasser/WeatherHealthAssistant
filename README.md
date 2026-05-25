@@ -32,7 +32,7 @@ Un assistant santé intelligent qui analyse les conditions météo en temps rée
 ### 1. Cloner le repo
 
 ```bash
-git clone https://github.com/ton-username/weather-health-app.git
+https://github.com/IslemNasser/WeatherHealthAssistant.git
 cd weather-health-app
 ```
 
